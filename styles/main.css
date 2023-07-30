@@ -76,6 +76,10 @@ button {
     height: 600px;
 }
 
+.accordion {
+    margin-top: 300px;
+}
+
 .accordion-button{
     background-color: rgb(88, 145, 100);
     color: blanchedalmond;
@@ -83,4 +87,5 @@ button {
 
 .accord-image{
     max-height: 600px;
+    margin-bottom: 150px;
 }
