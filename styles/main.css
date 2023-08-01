@@ -105,3 +105,23 @@ button {
     max-height: 600px;
     margin-bottom: 150px;
 }
+
+/* Card */
+
+.card {
+    border-radius: 150px 150px 12px 12px;
+    background: #F3F3F3;
+    text-align: center;
+    border: none;
+    height: 440px;
+}
+
+.card-img-top {
+    width: auto;
+    height: 320px;
+    margin: auto;
+}
+
+.card-text {
+    color: rgb(36, 61, 36);
+}
