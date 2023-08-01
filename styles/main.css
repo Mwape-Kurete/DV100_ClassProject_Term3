@@ -36,6 +36,22 @@ button {
 
 /* bootstrap component */
 
+/* Navigation */
+
+.nav-link {
+    font-family: 'Lato', sans-serif;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-link:hover {
+    color: rgb(36, 61, 36);
+}
+
+.nav-link.active {
+    border-bottom: 2px solid rgb(36, 61, 36);
+    color: rgb(36, 61, 36);
+}
+
 /* carousel */
 
 .carousel-item {
