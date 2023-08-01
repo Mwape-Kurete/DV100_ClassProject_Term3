@@ -120,8 +120,13 @@ button {
     width: auto;
     height: 320px;
     margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .card-text {
     color: rgb(36, 61, 36);
+}
+
+.card-img-top.small {
+    height: 200px;
 }
