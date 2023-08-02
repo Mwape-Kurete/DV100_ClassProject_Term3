@@ -130,3 +130,26 @@ button {
 .card-img-top.small {
     height: 200px;
 }
+
+/* Wishlist */
+
+.list-img-left {
+    width: auto;
+    height: 100px;
+    margin: auto;
+}
+
+.list-text {
+    color: rgb(36, 61, 36);
+    vertical-align: middle;
+    font-family: 'Lato', sans-serif;
+}
+
+.list-del {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#remove {
+    text-align: center;
+}
