@@ -25,4 +25,25 @@ $(".card").click(function(){
 
     // resize image to fit added text 
     $(".card-img-top").toggleClass("small");
-})
+
+});
+
+
+$("#plant1").click(function(){
+    // -----------------------------------------------
+    // wishlist
+    $("#plant1").remove();
+});
+
+$("#plant2").click(function(){
+    // -----------------------------------------------
+    // wishlist
+    $("#plant2").remove();
+});
+
+$("#plant3").click(function(){
+    // -----------------------------------------------
+    // wishlist
+    $("#plant3").remove();
+});
+

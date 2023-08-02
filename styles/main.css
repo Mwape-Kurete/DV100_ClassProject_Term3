@@ -133,6 +133,10 @@ button {
 
 /* Wishlist */
 
+tr:hover {
+    cursor: pointer;
+}
+
 .list-img-left {
     width: auto;
     height: 100px;
@@ -149,6 +153,7 @@ button {
     text-align: center;
     vertical-align: middle;
 }
+
 
 #remove {
     text-align: center;
