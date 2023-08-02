@@ -154,6 +154,15 @@ tr:hover {
     vertical-align: middle;
 }
 
+.list-del-img:hover {
+    border: 2px solid rgba(183, 0, 0, 0.881);
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all cubic-bezier(.08,.69,1,.26);
+
+}
 
 #remove {
     text-align: center;

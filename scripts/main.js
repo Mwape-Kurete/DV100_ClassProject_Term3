@@ -29,19 +29,19 @@ $(".card").click(function(){
 });
 
 
-$("#plant1").click(function(){
+$("#del1").click(function(){
     // -----------------------------------------------
     // wishlist
     $("#plant1").remove();
 });
 
-$("#plant2").click(function(){
+$("#del2").click(function(){
     // -----------------------------------------------
     // wishlist
     $("#plant2").remove();
 });
 
-$("#plant3").click(function(){
+$("#del3").click(function(){
     // -----------------------------------------------
     // wishlist
     $("#plant3").remove();
