@@ -7,6 +7,7 @@ $(document).ready(function(){
     // when the hero loads animate it upwards
     
     $(".hero-image").animate({top: '-=100px'});
+    $(".hero-image2").animate({top: '-=25px'});
 
 
     // ----------------------------------------------
