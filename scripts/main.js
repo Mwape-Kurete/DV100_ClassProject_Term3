@@ -9,7 +9,8 @@ const arrPlant = [
         description: "Graceful and lush, this charming indoor plant boasts",
         image: "plant1.png",
         lightAmount: "low",
-        addedDate: "2022-09-12"
+        addedDate: "2022-09-12",
+        origin: "Pretoria"
     }, // pos 0
     {
         name: "White Sprite Succulent",
@@ -17,7 +18,8 @@ const arrPlant = [
         description: "Graceful and lush, this charming indoor plant boasts",
         image: "plant2.png",
         lightAmount: "bright",
-        addedDate: "2023-03-25"
+        addedDate: "2023-03-25",
+        origin: "Texas"
     }, // pos 1
     {
         name: "Snake Plant",
@@ -25,7 +27,8 @@ const arrPlant = [
         description: "Graceful and lush, this charming indoor plant boasts",
         image: "plant3.png",
         lightAmount: "low",
-        addedDate: "2023-05-15"
+        addedDate: "2023-05-15",
+        origin: "London"
     }, // pos 2
     {
         name: "Parlour Palm",
@@ -33,7 +36,8 @@ const arrPlant = [
         description: "Graceful and lush, this charming indoor plant boasts",
         image: "plant4.png",
         lightAmount: "low",
-        addedDate: "2023-01-25"
+        addedDate: "2023-01-25",
+        origin: "China"
     }, // pos 3
     {
         name: "Japanese Maple",
@@ -41,7 +45,8 @@ const arrPlant = [
         description: "Graceful and lush, this charming indoor plant boasts",
         image: "plant5.png",
         lightAmount: "bright",
-        addedDate: "2023-04-20"
+        addedDate: "2023-04-20",
+        origin: "Japan"
     }, // pos 4
 ];
 
@@ -85,11 +90,34 @@ function loadPlants(plantsToShow) {
     // clearing elements 
     $("#plantsContainer").empty();
 
+
+    // API
+
+
     // loop thtough the list of plants 
     for (let i = 0; i < plantsToShow.length; i++) {
         const plant = plantsToShow[i];
 
         console.log(plant);
+
+        // API 
+
+        $.ajax({
+            type: "GET",
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + plant.origin + "appid=0c8a911e5c7f8e5a03991afe2075de21",
+    
+            success: function(data){
+                temp = data; 
+                console.log(temp);
+            },
+        }).done(function (){
+            // set Temperature 
+            // Will give the result with a higher val 
+            $(currentChild).find("#originTemp").text("Origin Temp: " + Math.round(tempData.main.temp- 273) + "°C");
+
+        });
+        // END OF API
+
 
         // 1. want to select the plants container and add current array plant to it 
         $("#plantsContainer").append($("#plantCardTemplate").html());
@@ -106,6 +134,9 @@ function loadPlants(plantsToShow) {
 
         // 4. Hide Description Text 
         $(currentChild).find("#descriptionText").hide();
+        $(currentChild).find("#originTemp").hide();
+
+        
 
     }
 }
@@ -135,9 +166,12 @@ function filterSortPlants() {
 
     // filtering the plants 
     if (appliedFilter) {
+
         filteredSortedArrPlants = arrPlant.filter(plant => plant.lightAmount == appliedFilter);
+
     } else {
-        filteredSortedArrPlants = arrPlant
+
+        filteredSortedArrPlants = arrPlant;
     }
 
     // Sort Plants 
@@ -172,6 +206,7 @@ $("#plantsContainer").on('click', '.card', function () {
 
     $(this).find("#priceText").toggle();
     $(this).find("#descriptionText").toggle();
+    $(this).find("#originTemp").toggle();
 
     // resize image to fit added text 
     $(this).find(".card-img-top").toggleClass("small");
@@ -197,6 +232,3 @@ $("#del3").click(function () {
     $("#plant3").remove();
 });
 
-$(documen.ready(function(){
-    
-}))
