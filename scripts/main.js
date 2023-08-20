@@ -12,20 +12,57 @@ $(document).ready(function(){
 
     // ----------------------------------------------
     // browse 
-    $("#descriptionText").hide();
+    
+    loadPlants();
+
+
 });
 
-// When card is clicked 
+//---------------------------------------------------------------------
+// Load All Plants 
+// --------------------------------------------------------------------
 
-$(".card").click(function(){
+function loadPlants(){
+
+    // loop thtough the list of plants 
+    for (let i = 0; i < arrPlant.length; i++) 
+    {
+        const plant = arrPlant[i];
+
+        console.log(plant);
+        
+        // 1. want to select the plants container and add current array plant to it 
+        $("#plantsContainer").append($("#plantCardTemplate").html());
+
+        // 2. create a variable containing the most recently add plant card
+        let currentChild = $("#plantsContainer").children().eq(i+1);
+
+        // 3. set the content for the current plant card from plants list array
+        $(currentChild).find(".card-img-top").attr('src', '../assets/Plants/' + plant.image);
+        $(currentChild).find("#nameText").text(plant.name);
+        $(currentChild).find("#priceText").text(plant.price);
+        $(currentChild).find("#descriptionText").text(plant.description);
+
+        // 4. Hide Description Text 
+        $(currentChild).find("#descriptionText").hide();
+
+    }
+}
+
+
+// --------------------------------------------------------------------------
+// when the card is clicked
+// ---------------------------------------------------------------------
+
+$("#plantsContainer").on('click', '.card', function(){
     
     // TOGGLE PRICE AND DESCRIPT TEXT
-
-    $("#priceText").toggle();
-    $("#descriptionText").toggle();
+    
+    $(this).find("#priceText").toggle();
+    $(this).find("#descriptionText").toggle();
 
     // resize image to fit added text 
-    $(".card-img-top").toggleClass("small");
+    $(this).find(".card-img-top").toggleClass("small");
 
 });
 
