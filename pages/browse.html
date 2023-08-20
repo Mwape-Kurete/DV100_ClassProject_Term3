@@ -52,55 +52,51 @@
 
       <!-- Filter Radio Buttons -->
       <div class="btn-group col-sm-auto" role="group">
-        <input type="radio" class="btn-check" name="filterRadio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn btn-outline-success" for="btnradio1">All Plants</label>
+        <input type="radio" class="btn-check" name="filterRadio" id="allPlantsFilter" value="" autocomplete="off" checked>
+        <label class="btn btn-outline-success" for="allPlantsFilter">All Plants</label>
       
-        <input type="radio" class="btn-check" name="filterRadio" id="btnradio2" autocomplete="off">
-        <label class="btn btn-outline-success" for="btnradio2"><i class="bi bi-brightness-high"></i> Bright Light</label>
+        <input type="radio" class="btn-check" name="filterRadio" id="brightLightFilter" value="bright" autocomplete="off">
+        <label class="btn btn-outline-success" for="brightLightFilter"><i class="bi bi-brightness-high"></i> Bright Light</label>
       
-        <input type="radio" class="btn-check" name="filterRadio" id="btnradio3" autocomplete="off">
-        <label class="btn btn-outline-success" for="btnradio3"> <i class="bi bi-brightness-low"></i> Low Light</label>
+        <input type="radio" class="btn-check" name="filterRadio" id="lowLightFilter" value="low" autocomplete="off">
+        <label class="btn btn-outline-success" for="lowLightFilter"> <i class="bi bi-brightness-low"></i> Low Light</label>
       </div>
 
       <!-- Sort Radio Buttons -->   
       <div class="btn-group col-sm-auto" role="group">   
-        <input type="radio" class="btn-check" name="sortRadio" id="btnradio4" autocomplete="off" checked>
-        <label class="btn btn-outline-secondary" for="btnradio4"><i class="bi-calendar4"></i> Newest to Oldest </label>
+        <input type="radio" class="btn-check" name="sortRadio" id="defaultSort" value="date added" autocomplete="off" checked>
+        <label class="btn btn-outline-secondary" for="defaultSort"><i class="bi-calendar4"></i> Newest to Oldest </label>
       
-        <input type="radio" class="btn-check" name="sortRadio" id="btnradio5" autocomplete="off">
-        <label class="btn btn-outline-secondary" for="btnradio5"> <i class="bi-sort-down-alt"></i> Price: Low to High</label>
+        <input type="radio" class="btn-check" name="sortRadio" id="priceSort" value="low to high" autocomplete="off">
+        <label class="btn btn-outline-secondary" for="priceSort"> <i class="bi-sort-down-alt"></i> Price: Low to High</label>
       </div>
 
     </div>
     <!-- Plants List Cards -->
     <div class="row py-5 gy-3" id="plantsContainer">
 
-      <!-- Browse Card Template  -->
-      <template id="plantCardTemplate">
-      <div class="col-4">
-
-        <!-- Card -->
-        
-          <div class="card">
-            <img src="../assets/Plants/plant1.png" class="card-img-top" alt="ficua plant">
-            <div class="card-body">
-              <h4 class="card-title" id="nameText">Ficus Tree</h4>
-              <p class="card-text" id="priceText">R320</p>
-              <p class="card-text mt-4" id="descriptionText">Graceful and lush, this charming indoor plant boasts
-                glossy, emerald-green leaves that effortlessly brighten any space. Easy to care for and standing at an
-                ideal height, our Ficus Tree is the perfect addition to elevate your interior décor.</p>
-            </div>
-          </div>
-      </div>
-
-      </template>
-
-
-      <!-- </template> -->
+      <!-- PLant template appended here -->
 
     </div>
   </div>
 
+  <!-- Browse Card Template  -->
+  <template id="plantCardTemplate">
+    <div class="col-4">
+      <!-- Card -->
+        <div class="card">
+          <img src="../assets/Plants/plant1.png" class="card-img-top" alt="ficua plant">
+          <div class="card-body">
+            <h4 class="card-title" id="nameText">Ficus Tree</h4>
+            <p class="card-text" id="priceText">R320</p>
+            <p class="card-text mt-4" id="descriptionText">Graceful and lush, this charming indoor plant boasts
+              glossy, emerald-green leaves that effortlessly brighten any space. Easy to care for and standing at an
+              ideal height, our Ficus Tree is the perfect addition to elevate your interior décor.</p>
+          </div>
+        </div>
+    </div>
+
+    </template>
 
   <!-- Javascript -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
